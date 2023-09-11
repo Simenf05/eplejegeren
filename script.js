@@ -48,8 +48,8 @@ function catMove(deltaX, deltaY) {
 const epleEl = document.querySelector("#eple")
 const epleDim = [100, 100]
 const eplePos = [(window.innerWidth - epleDim[0]) / 2, (window.innerHeight - epleDim[1]) / 2]
-const epleTime = 10
-const epleSpeed = 30
+const epleTime = 10000
+const epleSpeed = 100
 
 
 setDim(epleEl, epleDim[0], epleDim[1])
@@ -93,8 +93,41 @@ function arrowPress(e) {
         case "ArrowRight":
             catMove(speed, 0)
             break;
+        case "32":
+            checkHit();
+            console.log("knapp")
+            break;
     }
 
+}
+
+let catPosX;
+let catPosY;
+let eplePosX;
+let eplePosY;
+let poengsum = 0;
+
+function checkHit() {
+    catPosX = document.getElementById("cat").style.left;
+    catPosY = document.getElementById("cat").style.top;
+    eplePosX = document.getElementById("eple").style.left;
+    eplePosY = document.getElementById("eple").style.top;
+    catPosX = catPosX.replace("px", "");
+    catPosY = catPosY.replace("px", "");
+    eplePosX = eplePosX.replace("px", "");
+    eplePosY = eplePosY.replace("px", "");
+    catPosX = Number(catPosX);
+    catPosY = Number(catPosY);
+    eplePosX = Number(eplePosX);
+    eplePosY = Number(eplePosY);
+
+    if(catPosX >= (eplePosX) && catPosX <= (eplePosX + 40) && catPosY >= (eplePosY) && catPosY <= (eplePosY + 40)) {
+        poengsum = Number(poengsum) + 1;
+        document.getElementById("poeng").innerHTML = poengsum;
+        return;
+    } else {
+        return;
+    }
 }
 
 document.addEventListener("keydown", arrowPress)
