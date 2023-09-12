@@ -10,6 +10,11 @@ function setDim(obj, width, height) {
 }
 
 
+let poeng = 0
+const poengEl = document.querySelector("#poeng")
+poengEl.value = poeng
+
+
 const catEl = document.querySelector("#cat")
 const catPos = [0, 0]
 const catDim = [100, 100]
@@ -18,11 +23,6 @@ const speed = 10
 setDim(catEl, catDim[0], catDim[1])
 setPos(catEl, catPos[0], catPos[1])
 
-function clickCat(e) {
-    alert("Du trykket på katten.")
-}
-
-catEl.onclick = clickCat
 
 function catMove(deltaX, deltaY) {
 
@@ -35,6 +35,7 @@ function catMove(deltaX, deltaY) {
     catPos[1] += deltaY
 
     setPos(catEl, catPos[0], catPos[1])
+    checkOverlap()
 }
 
 
@@ -48,7 +49,7 @@ function catMove(deltaX, deltaY) {
 const epleEl = document.querySelector("#eple")
 const epleDim = [100, 100]
 const eplePos = [(window.innerWidth - epleDim[0]) / 2, (window.innerHeight - epleDim[1]) / 2]
-const epleTime = 10000
+const epleTime = 100
 const epleSpeed = 100
 
 
@@ -107,6 +108,46 @@ let eplePosX;
 let eplePosY;
 let poengsum = 0;
 
+
+function checkOverlap(e) {
+
+    const catRect = catEl.getBoundingClientRect()
+    const epleRect = epleEl.getBoundingClientRect()
+    
+    const overlap = !(
+        catRect.right < epleRect.left ||
+        catRect.left > epleRect.right ||
+        catRect.bottom < epleRect.top ||
+        catRect.top > epleRect.bottom
+    )    
+
+    if (overlap) {
+
+
+        poeng += 1
+        poengEl.value = `${poeng}`
+
+
+        if (catRect.left < (window.innerWidth - catRect.right)) {
+            catPos[0] = (window.innerWidth - catDim[0])
+        }
+        else {
+            catPos[0] = 0
+        }
+
+        if (catRect.top < (window.innerHeight - catRect.bottom)) {
+            catPos[1] = (window.innerHeight - catDim[1])
+        }
+        else {
+            catPos[1] = 0
+        }
+        
+        setPos(catEl, catPos[0], catPos[1])
+
+    }
+}
+
+
 function checkHit() {
     catPosX = document.getElementById("cat").style.left;
     catPosY = document.getElementById("cat").style.top;
@@ -121,12 +162,15 @@ function checkHit() {
     eplePosX = Number(eplePosX);
     eplePosY = Number(eplePosY);
 
-    if(catPosX >= (eplePosX) && catPosX <= (eplePosX + 40) && catPosY >= (eplePosY) && catPosY <= (eplePosY + 40)) {
+    if(
+        catPosX >= (eplePosX) && 
+        catPosX <= (eplePosX + 40) && 
+        catPosY >= (eplePosY) && 
+        catPosY <= (eplePosY + 40)
+    ) 
+    {
         poengsum = Number(poengsum) + 1;
         document.getElementById("poeng").innerHTML = poengsum;
-        return;
-    } else {
-        return;
     }
 }
 
