@@ -12,7 +12,15 @@ body {
 #poengtekst{
     position:absolute;
     top:0px;
-    left:50%;
+    left:45%;
+    margin-left: auto;
+    margin-right: auto;
+    height:20px;
+}
+#poeng{
+    position:absolute;
+    top:30px;
+    left:45%;
     margin-left: auto;
     margin-right: auto;
     height:20px;
