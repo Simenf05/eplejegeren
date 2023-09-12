@@ -9,3 +9,10 @@ body {
 #eple {
     position: absolute;
 }
+#poengtekst{
+    position:absolute;
+    top:0px;
+    margin-left: auto;
+    margin-right: auto;
+    height:20px;
+}
