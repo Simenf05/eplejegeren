@@ -49,8 +49,22 @@ function catMove(deltaX, deltaY) {
 const epleEl = document.querySelector("#eple")
 const epleDim = [100, 100]
 const eplePos = [(window.innerWidth - epleDim[0]) / 2, (window.innerHeight - epleDim[1]) / 2]
-const epleTime = 100
-const epleSpeed = 100
+let epleTime = 100
+let epleSpeed = 100
+
+function lett(epleTime,epleSpeed) {
+    epleSpeed = 1
+    console.log("lett");
+}
+function middels(epleTime,epleSpeed) {
+    epleSpeed = 500
+    console.log("middels")
+}
+function vanskelig(epleTime,epleSpeed) {
+    epleSpeed = 1000
+    console.log("vanskelig")
+}
+
 
 
 setDim(epleEl, epleDim[0], epleDim[1])
