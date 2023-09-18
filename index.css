@@ -30,19 +30,58 @@ body {
 }
 #lett {
     position:absolute;
+    background-color: lightblue;
     top:20px;
     left:60%;
-    width: 5%;
+    width: 8%;
+	border-radius: 10px;
+	border: 2px solid white;
+	color: black;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 11px;
+	text-align: center;
 }
 #middels {
     position:absolute;
+    background-color: lightblue;
     top:20px;
     left:75%;
-    width: 5%;
+    width: 8%;
+	border-radius: 10px;
+	border: 2px solid white;
+	color: black;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 11px;
+	text-align: center;
 }
 #vanskelig {
     position:absolute;
+    background-color: lightblue;
     top:20px;
     left:90%;
-    width: 5%;
+    width: 8%;
+	border-radius: 10px;
+	border: 2px solid white;
+	color: black;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 11px;
+	text-align: center;
+}
+
+#lett.active {
+    background-color: green;
+}
+
+#middels.active {
+    background-color: orange;
+}
+
+#vanskelig.active {
+    background-color: red;
 }

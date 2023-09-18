@@ -61,16 +61,20 @@ function lett() {
     epleTime = 100
     changeTime()
     console.log("lett");
+    activateButton('lett');
+
 }
 function middels() {
     epleTime = 50
     changeTime()
     console.log("middels")
+    activateButton('middels');
 }
 function vanskelig() {
     epleTime = 20
     changeTime()
     console.log("vanskelig")
+    activateButton('vanskelig');
 }
 
 function background(num) {
@@ -166,4 +170,12 @@ function checkOverlap(e) {
 }
 
 document.addEventListener("keydown", arrowPress)
+
+function activateButton(buttonId) {
+    document.getElementById('lett').classList.remove('active');
+    document.getElementById('middels').classList.remove('active');
+    document.getElementById('vanskelig').classList.remove('active');
+
+    document.getElementById(buttonId).classList.add('active');
+}
 
