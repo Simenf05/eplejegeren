@@ -73,6 +73,11 @@ function vanskelig() {
     console.log("vanskelig")
 }
 
+function background(num) {
+    document.body.style.backgroundImage = `url(Background${num}.png)`
+    console.log(num);
+}
+
 
 
 setDim(epleEl, epleDim[0], epleDim[1])
@@ -117,19 +122,9 @@ function arrowPress(e) {
         case "ArrowRight":
             catMove(speed, 0)
             break;
-        case "32":
-            checkHit();
-            console.log("knapp")
-            break;
     }
 
 }
-
-let catPosX;
-let catPosY;
-let eplePosX;
-let eplePosY;
-let poengsum = 0;
 
 
 function checkOverlap(e) {
@@ -167,33 +162,6 @@ function checkOverlap(e) {
         
         setPos(catEl, catPos[0], catPos[1])
 
-    }
-}
-
-
-function checkHit() {
-    catPosX = document.getElementById("cat").style.left;
-    catPosY = document.getElementById("cat").style.top;
-    eplePosX = document.getElementById("eple").style.left;
-    eplePosY = document.getElementById("eple").style.top;
-    catPosX = catPosX.replace("px", "");
-    catPosY = catPosY.replace("px", "");
-    eplePosX = eplePosX.replace("px", "");
-    eplePosY = eplePosY.replace("px", "");
-    catPosX = Number(catPosX);
-    catPosY = Number(catPosY);
-    eplePosX = Number(eplePosX);
-    eplePosY = Number(eplePosY);
-
-    if(
-        catPosX >= (eplePosX) && 
-        catPosX <= (eplePosX + 40) && 
-        catPosY >= (eplePosY) && 
-        catPosY <= (eplePosY + 40)
-    ) 
-    {
-        poengsum = Number(poengsum) + 1;
-        document.getElementById("poeng").innerHTML = poengsum;
     }
 }
 
