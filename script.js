@@ -106,7 +106,7 @@ function moveEple() {
 
 let epleInterval = setInterval(moveEple, epleTime)
 
-
+lett()
 
 function arrowPress(e) {
     

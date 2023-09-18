@@ -28,7 +28,7 @@ body {
     margin-right: auto;
     height:20px;
 }
-#lett {
+#lett, #middels, #vanskelig{
     position:absolute;
     background-color: lightblue;
     top:20px;
@@ -43,35 +43,16 @@ body {
 	padding: 11px;
 	text-align: center;
 }
+
+#lett {
+    left: 60%; 
+}
+
 #middels {
-    position:absolute;
-    background-color: lightblue;
-    top:20px;
     left:75%;
-    width: 8%;
-	border-radius: 10px;
-	border: 2px solid white;
-	color: black;
-	cursor: pointer;
-	font-family: sans-serif;
-	font-size: 20px;
-	padding: 11px;
-	text-align: center;
 }
 #vanskelig {
-    position:absolute;
-    background-color: lightblue;
-    top:20px;
     left:90%;
-    width: 8%;
-	border-radius: 10px;
-	border: 2px solid white;
-	color: black;
-	cursor: pointer;
-	font-family: sans-serif;
-	font-size: 20px;
-	padding: 11px;
-	text-align: center;
 }
 
 #lett.active {
@@ -84,4 +65,30 @@ body {
 
 #vanskelig.active {
     background-color: red;
+}
+
+#backgroundSelect {
+    display: flex;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    height: 20vh;
+    width: 65vh;
+    justify-content: space-around;
+}
+
+.backgroundsSelect {
+    height: 90%;
+    width: 30%;
+    border: 1px black solid;
+    transition: all 0.2s;
+}
+
+.backgroundsSelect:hover {
+    height: 100%;
+    width: 33%;
+}
+
+#cat, #eple {
+    z-index: 1;
 }
