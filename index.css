@@ -3,13 +3,15 @@ body {
     display: block;
 }
 
-#cat {
+.absolute {
     position: absolute;
 }
 
-#eple {
-    position: absolute;
+#background {
+    top: 0;
+    left: 0;
 }
+
 #poengtekst{
     position:absolute;
     top:0px;
