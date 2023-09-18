@@ -1,16 +1,15 @@
 body {
     overflow: hidden;
     display: block;
+    background-image: url("Background.png");
+    background-repeat: repeat;
 }
 
 .absolute {
     position: absolute;
 }
 
-#background {
-    top: 0;
-    left: 0;
-}
+
 
 #poengtekst{
     position:absolute;
