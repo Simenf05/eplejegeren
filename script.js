@@ -84,6 +84,7 @@ function moveEple() {
     eplePos[1] += deltaY
 
     setPos(epleEl, eplePos[0], eplePos[1])
+    checkOverlap()
 }
 
 const epleInterval = setInterval(moveEple, epleTime)
