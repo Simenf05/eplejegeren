@@ -52,16 +52,24 @@ const eplePos = [(window.innerWidth - epleDim[0]) / 2, (window.innerHeight - epl
 let epleTime = 100
 let epleSpeed = 100
 
-function lett(epleTime,epleSpeed) {
-    epleSpeed = 1
+function changeTime() {
+    clearInterval(epleInterval)
+    epleInterval = setInterval(moveEple, epleTime)
+}
+
+function lett() {
+    epleTime = 100
+    changeTime()
     console.log("lett");
 }
-function middels(epleTime,epleSpeed) {
-    epleSpeed = 500
+function middels() {
+    epleTime = 50
+    changeTime()
     console.log("middels")
 }
-function vanskelig(epleTime,epleSpeed) {
-    epleSpeed = 1000
+function vanskelig() {
+    epleTime = 20
+    changeTime()
     console.log("vanskelig")
 }
 
@@ -87,7 +95,7 @@ function moveEple() {
     checkOverlap()
 }
 
-const epleInterval = setInterval(moveEple, epleTime)
+let epleInterval = setInterval(moveEple, epleTime)
 
 
 
